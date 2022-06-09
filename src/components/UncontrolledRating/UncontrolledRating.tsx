@@ -5,11 +5,11 @@ type StarPropsType = {
     id: 0 | 1 | 2 | 3 | 4 | 5
     callBack: (id: number) => void
 }
-type RatingPropsType = {
-    // value: 0 | 1 | 2 | 3 | 4 | 5
-}
+// type RatingPropsType = {
+//     // value: 0 | 1 | 2 | 3 | 4 | 5
+// }
 
-export function UncontrolledRating(props: RatingPropsType) {
+export function UncontrolledRating() {
     const [value, setValue] = useState<number>(0);
     const onClickHandler = (val: number) => {
       setValue(val);
