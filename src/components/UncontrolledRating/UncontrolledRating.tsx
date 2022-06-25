@@ -22,7 +22,8 @@ export function UncontrolledRating() {
             <Star id={3} selected={value > 2} callBack={onClickHandler}/>
             <Star id={4} selected={value > 3} callBack={onClickHandler}/>
             <Star id={5} selected={value > 4} callBack={onClickHandler}/>
-        </div>);
+        </div>
+    );
 }
 
 function Star(props: StarPropsType) {

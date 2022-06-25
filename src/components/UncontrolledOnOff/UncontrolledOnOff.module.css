@@ -1,0 +1,28 @@
+.main {
+display: grid;
+    grid-template-columns: repeat(3, 50px);
+}
+
+.onButton {
+    background-color: green;
+}
+
+.offButton {
+    background-color: red;
+}
+
+.circleLamp {
+    border: 2px solid black;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+}
+
+
+.circleLampGreen {
+    background-color: green;
+}
+
+.circleLampRed {
+    background-color: red;
+}

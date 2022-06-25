@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
-import s from './OnOff.module.css'
+import s from './UncontrolledOnOff.module.css'
 
 type OnOffPropsType = {
-    value: boolean
-    setValue: (value: boolean) => void
+    // value: boolean
 }
 type ButtonPropsType = {
     name: string
@@ -14,25 +13,30 @@ type CircleLampPropsType = {
     className: string
 }
 
-export const OnOff: React.FC<OnOffPropsType> = (props) => {
-    // console.log('Rendering OnOff');
-    // const [value, setValue] = useState(false);
-    const onClickOnHandler = () => props.value ? props.value : props.setValue(!props.value);
-    const onClickOffHandler = () => props.value ? props.setValue(!props.value) : props.value;
-
+export const UncontrolledOnOff: React.FC<OnOffPropsType> = (props) => {
+    console.log('Rendering OnOff');
+    const [value, setValue] = useState(false);
+    const onClickOnHandler = () => {
+        setValue(true);
+        console.log(value);
+    }
+    const onClickOffHandler = () => {
+        setValue(false);
+        console.log(value);
+    }
     return (
         <div className={s.main}>
             <Button
                 name={'On'}
-                className={props.value ? s.onButton : ''}
+                className={value ? s.onButton : ''}
                 callBack={onClickOnHandler}
             />
             <Button
                 name={'Off'}
-                className={!props.value ? s.offButton : ''}
+                className={!value ? s.offButton : ''}
                 callBack={onClickOffHandler}
             />
-            <CircleLamp className={props.value ? s.circleLampGreen : s.circleLampRed}/>
+            <CircleLamp className={value ? s.circleLampGreen : s.circleLampRed}/>
         </div>
     );
 };
