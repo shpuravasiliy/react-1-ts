@@ -3,7 +3,7 @@ import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {UncontrolledRating} from './UncontrolledRating';
 
 export default {
-    title: 'UncontrolledRating',
+    title: 'components/UncontrolledRating',
     component: UncontrolledRating,
 } as ComponentMeta<typeof UncontrolledRating>;
 

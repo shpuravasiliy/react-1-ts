@@ -3,6 +3,9 @@ import React from 'react';
 export type AccordionPropsType = {
     titleValue: string
     collapsed: boolean
+    /**
+     * Set new state
+     */
     setState: (newState: boolean) => void
 }
 type AccordionTitlePropsType = {

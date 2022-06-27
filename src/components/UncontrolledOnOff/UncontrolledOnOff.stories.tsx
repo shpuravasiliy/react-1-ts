@@ -3,7 +3,7 @@ import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {UncontrolledOnOff} from './UncontrolledOnOff';
 
 export default {
-    title: 'UncontrolledOnOff',
+    title: 'components/UncontrolledOnOff',
     component: UncontrolledOnOff,
 } as ComponentMeta<typeof UncontrolledOnOff>;
 
