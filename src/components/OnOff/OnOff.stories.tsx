@@ -6,9 +6,9 @@ import {action} from '@storybook/addon-actions';
 export default {
     title: 'OnOff',
     component: OnOff,
-    argTypes: {
-        setValue: {action: 'on or off clicked'},
-    }
+    // argTypes: {
+    //     onClick: {action: 'on or off clicked'},
+    // }
 } as ComponentMeta<typeof OnOff>;
 
 const Template: ComponentStory<typeof OnOff> = (args) => <OnOff {...args} />;

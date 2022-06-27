@@ -1,17 +1,19 @@
 import React, {useState} from 'react';
 
+type IdType = 0 | 1 | 2 | 3 | 4 | 5;
+
 type StarPropsType = {
     selected: boolean
-    id: 0 | 1 | 2 | 3 | 4 | 5
-    callBack: (id: number) => void
+    id: IdType
+    callBack: (id: IdType) => void
 }
-// type RatingPropsType = {
-//     // value: 0 | 1 | 2 | 3 | 4 | 5
-// }
+type RatingPropsType = {
+    defaultValue?: IdType
+}
 
-export function UncontrolledRating() {
-    const [value, setValue] = useState<number>(0);
-    const onClickHandler = (val: number) => {
+export const UncontrolledRating: React.FC<RatingPropsType> = (props) => {
+    const [value, setValue] = useState<IdType>(props.defaultValue ? props.defaultValue : 0);
+    const onClickHandler = (val: IdType) => {
       setValue(val);
     }
     return (

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import s from './UncontrolledOnOff.module.css'
 
 type OnOffPropsType = {
-    // value: boolean
+    defaultOn?: boolean
 }
 type ButtonPropsType = {
     name: string
@@ -15,7 +15,7 @@ type CircleLampPropsType = {
 
 export const UncontrolledOnOff: React.FC<OnOffPropsType> = (props) => {
     console.log('Rendering OnOff');
-    const [value, setValue] = useState(false);
+    const [value, setValue] = useState(props.defaultOn ? props.defaultOn : false);
     const onClickOnHandler = () => {
         setValue(true);
         console.log(value);
