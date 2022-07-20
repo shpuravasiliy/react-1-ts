@@ -15,7 +15,7 @@ const getCategory = (category: string) => ({
 })
 
 export default {
-    title: 'components/Accordion',
+    title: 'components/Select',
     component: Accordion,
     argTypes: {
         setState: {
@@ -24,7 +24,7 @@ export default {
     }
 } as ComponentMeta<typeof Accordion>;
 
-const callBack = action('Accordion mode changed');
+const callBack = action('Select mode changed');
 
 const Template: ComponentStory<typeof Accordion> = (args) => <Accordion {...args} />;
 const Template2: ComponentStory<typeof Accordion> = ({collapsed, setState, ...args}) => {
@@ -32,7 +32,9 @@ const Template2: ComponentStory<typeof Accordion> = ({collapsed, setState, ...ar
     return (
         <Accordion
             collapsed={value}
-            setState={setValue} {...args} />
+            setState={setValue} {...args}
+            items={['1', '2', '3', '4']}
+        />
     )
 };
 
@@ -41,12 +43,14 @@ CollapsedMode.args = {
     titleValue: 'Menu',
     collapsed: true,
     setState: callBack,
+    items: ['1', '2', '3', '4']
 };
 export const UncollapsedMode = Template.bind({});
 UncollapsedMode.args = {
     titleValue: 'Menu',
     collapsed: false,
     setState: callBack,
+    items: ['1', '2', '3', '4']
 };
 
 

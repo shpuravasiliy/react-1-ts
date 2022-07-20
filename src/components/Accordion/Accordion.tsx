@@ -7,20 +7,28 @@ export type AccordionPropsType = {
      * Set new state
      */
     setState: (newState: boolean) => void
+    items: string[]
 }
 type AccordionTitlePropsType = {
     title: string
     setState: () => void
 }
 
+type AccordionBodyPropsType = {
+    items: string[]
+}
+
 export function Accordion(props: AccordionPropsType) {
     const stateHandler = () => {
-      props.setState(!props.collapsed)
+        props.setState(!props.collapsed)
     }
     return (
         <div>
-            <AccordionTitle title={props.titleValue} setState={stateHandler}/>
-            {!props.collapsed && <AccordionBody/>}
+            <AccordionTitle
+                title={props.titleValue}
+                setState={stateHandler}
+            />
+            {!props.collapsed && <AccordionBody items={props.items}/>}
         </div>
     )
 }
@@ -34,12 +42,10 @@ function AccordionTitle(props: AccordionTitlePropsType) {
     )
 }
 
-function AccordionBody() {
+function AccordionBody(props: AccordionBodyPropsType) {
     return (
         <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
+            {props.items.map(i => <li key={i}>{i}</li>)}
         </ul>
     )
 }
