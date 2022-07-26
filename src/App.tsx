@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
-import {RatingValueType} from './components/Rating/Rating';
 import {Select, selectItems} from './components/Select/Select';
+import {UncontrolledAccordion} from './components/UncontrolledAccordion/UncontrolledAccordion';
 
 type PageTitlePropsType = {
     title: string
@@ -14,32 +14,31 @@ function App() {
     // const [onOffValue, setOnOffValue] = useState<boolean>(false)
     const selectItems: selectItems[] = [
         {
-            title: '1',
+            title: 'Moscow',
             value: '2'
         },
         {
-            title: '3',
+            title: 'New-York',
             value: '4'
         },
         {
-            title: '5',
+            title: 'London',
             value: '6'
         },
         {
-            title: '7',
+            title: 'Paris',
             value: '8'
         },
         {
-            title: '9',
+            title: 'Berlin',
             value: '10'
         },
         {
-            title: '11',
+            title: 'Madrid',
             value: '12'
         },
     ]
 
-    const [selectCollapsed, setSelectCollapsed] = useState<boolean>(false)
     const [selected, setSelected] = useState<string>(selectItems[0].title)
 
     return (
@@ -48,7 +47,7 @@ function App() {
             {/*Article 1*/}
             {/*<Rating value={ratingValue} setRating={setRatingValue}/>*/}
             {/*<Accordion titleValue={'Users'} collapsed={accordionCollapsed} setState={setAccordionCollapsed} items={['1', '2', '3', '4']}/>*/}
-            {/*<UncontrolledAccordion titleValue={'New menu'}/>*/}
+            <UncontrolledAccordion titleValue={'New menu'}/>
             {/*<UncontrolledRating />*/}
             {/*<UncontrolledOnOff />*/}
             {/*<OnOff value={onOffValue} setValue={setOnOffValue}/>*/}
@@ -56,8 +55,6 @@ function App() {
             <Select
                 selected={selected}
                 setSelected={setSelected}
-                collapsed={selectCollapsed}
-                setCollapsed={setSelectCollapsed}
                 items={selectItems}
             />
 

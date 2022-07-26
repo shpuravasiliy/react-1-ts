@@ -15,7 +15,7 @@ const getCategory = (category: string) => ({
 })
 
 export default {
-    title: 'components/Select',
+    title: 'components/Accordion',
     component: Accordion,
     argTypes: {
         setState: {
