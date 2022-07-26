@@ -14,7 +14,9 @@ const initialState = {
     collapsed: false,
 }
 
-export function UncontrolledAccordion(props: UncontrolledAccordionPropsType) {
+export const UncontrolledAccordion = React.memo(UncontrolledAccordionPresent);
+
+function UncontrolledAccordionPresent(props: UncontrolledAccordionPropsType) {
 
     // const [state, setState] = useState(false);
     const [state, dispatch] = useReducer(reducer, initialState);

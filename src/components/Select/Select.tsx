@@ -24,7 +24,9 @@ export type selectItems = {
     value: string
 }
 
-export function Select(props: SelectPropsType) {
+export const Select = React.memo(SelectPresent);
+
+function SelectPresent(props: SelectPropsType) {
 
     const [selectCollapsed, setSelectCollapsed] = useState<boolean>(false);
     const [focused, setFocused] = useState<string>(props.selected);

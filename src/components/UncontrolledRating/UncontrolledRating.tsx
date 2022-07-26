@@ -11,7 +11,7 @@ type RatingPropsType = {
     defaultValue?: IdType
 }
 
-export const UncontrolledRating: React.FC<RatingPropsType> = (props) => {
+const UncontrolledRatingPresent: React.FC<RatingPropsType> = (props) => {
     const [value, setValue] = useState<IdType>(props.defaultValue ? props.defaultValue : 0);
     const onClickHandler = (val: IdType) => {
       setValue(val);
@@ -27,6 +27,8 @@ export const UncontrolledRating: React.FC<RatingPropsType> = (props) => {
         </div>
     );
 }
+
+export const UncontrolledRating = React.memo(UncontrolledRatingPresent);
 
 function Star(props: StarPropsType) {
     const onClickHandler = () => {

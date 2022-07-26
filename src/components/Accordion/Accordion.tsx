@@ -18,7 +18,9 @@ type AccordionBodyPropsType = {
     items: string[]
 }
 
-export function Accordion(props: AccordionPropsType) {
+export const Accordion = React.memo(AccordionPresent);
+
+function AccordionPresent(props: AccordionPropsType) {
     const stateHandler = () => {
         props.setState(!props.collapsed)
     }

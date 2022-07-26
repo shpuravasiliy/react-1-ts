@@ -14,7 +14,7 @@ type CircleLampPropsType = {
     className: string
 }
 
-export const OnOff: React.FC<OnOffPropsType> = (props) => {
+const OnOffPresent: React.FC<OnOffPropsType> = (props) => {
     // console.log('Rendering OnOff');
     // const [value, setValue] = useState(false);
     const onClickOnHandler = () => props.value ? props.value : props.setValue(!props.value);
@@ -36,6 +36,8 @@ export const OnOff: React.FC<OnOffPropsType> = (props) => {
         </div>
     );
 };
+
+export const OnOff = React.memo(OnOffPresent);
 
 const Button: React.FC<ButtonPropsType> = (props) => {
     return (
