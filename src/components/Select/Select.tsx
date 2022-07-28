@@ -34,6 +34,7 @@ function SelectPresent(props: SelectPropsType) {
     const stateHandler = () => {
         setSelectCollapsed(!selectCollapsed)
     }
+    console.log('select rendered')
     return (
         <div className={style.selectMain}>
             <SelectTitle
