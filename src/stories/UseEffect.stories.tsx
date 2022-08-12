@@ -1,11 +1,16 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 export default {
-    title: 'React/useState demo',
+    title: 'React/useEffect demo',
 }
 
-export const Example1 = () => {
+export const SimpleExample = () => {
     const [counter, setCounter] = useState(0);
+
+    useEffect(() => {
+        console.log('SimpleExample');
+        document.title = counter.toString()
+    })
 
     return <>
         <div>{counter}</div>
