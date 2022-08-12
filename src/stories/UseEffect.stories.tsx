@@ -20,3 +20,29 @@ export const SimpleExample = () => {
         />
     </>
 }
+
+export const SetIntervalExample = () => {
+    const currentDate = new Date();
+
+    const [time, setTime] = useState({
+        hours: currentDate.getHours(),
+        minutes: currentDate.getMinutes(),
+        seconds: currentDate.getSeconds(),
+    });
+
+    useEffect(() => {
+       setInterval(() => {
+           const newTime = {
+               hours: currentDate.getHours(),
+               minutes: currentDate.getMinutes(),
+               seconds: currentDate.getSeconds(),
+           }
+           setTime(newTime)
+       }, 1000)
+    })
+
+    const sec = time.seconds < 10 ? '0' + time.seconds : time.seconds
+    return <>
+        {`${time.hours}:${time.minutes}:${sec}`}
+    </>
+}
