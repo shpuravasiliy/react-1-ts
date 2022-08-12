@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 
 export default {
     title: 'React/useEffect demo',
@@ -22,27 +22,19 @@ export const SimpleExample = () => {
 }
 
 export const SetIntervalExample = () => {
-    const currentDate = new Date();
-
-    const [time, setTime] = useState({
-        hours: currentDate.getHours(),
-        minutes: currentDate.getMinutes(),
-        seconds: currentDate.getSeconds(),
-    });
+    const [time, setTime] = useState(new Date());
 
     useEffect(() => {
-       setInterval(() => {
-           const newTime = {
-               hours: currentDate.getHours(),
-               minutes: currentDate.getMinutes(),
-               seconds: currentDate.getSeconds(),
-           }
-           setTime(newTime)
-       }, 1000)
-    })
+        setInterval(() => {
+            setTime(new Date())
+        }, 1000)
+    }, [])
 
-    const sec = time.seconds < 10 ? '0' + time.seconds : time.seconds
+    const sec = time.getSeconds() < 10 ? '0' + time.getSeconds() : time.getSeconds()
+    const min = time.getMinutes() < 10 ? '0' + time.getMinutes() : time.getMinutes()
+    const hour = time.getHours() < 10 ? '0' + time.getHours() : time.getHours()
+
     return <>
-        {`${time.hours}:${time.minutes}:${sec}`}
+        {`${hour}:${min}:${sec}`}
     </>
 }

@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import {Select, selectItems} from './components/Select/Select';
 import {UncontrolledAccordion} from './components/UncontrolledAccordion/UncontrolledAccordion';
+import Clock from './components/Clock/Clock';
 
 type PageTitlePropsType = {
     title: string
@@ -57,7 +58,7 @@ function App() {
                 setSelected={setSelected}
                 items={selectItems}
             />
-
+            <Clock clockType={'digital'}/>
         </div>
     );
 }
